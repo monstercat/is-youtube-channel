@@ -1,7 +1,7 @@
 
-# is-youtube-channel
+# is-youtube-channel [![Build Status](https://travis-ci.org/monstercat/is-youtube-channel.svg)](https://travis-ci.org/monstercat/is-youtube-channel)
 
-Simple check to see if a given string is a youtube channel
+  Simple check to see if a given string is a youtube channel
 
 ## Example
 
@@ -16,5 +16,5 @@ isChannel("JacobiCarterMC", function(err, valid){})           // /c/ urls
 
 ## API
 
-### isChannel(name : String, function(err : Error | null, isValid : bool))
+    isChannel(name : String, function(err : Error | null, isValid : bool))
 
