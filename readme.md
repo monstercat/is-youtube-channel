@@ -16,5 +16,10 @@ isChannel("JacobiCarterMC", function(err, valid){})           // /c/ urls
 
 ## API
 
-    isChannel(name : String, function(err : Error | null, isValid : bool))
+    isChannel(name : String,
+              function(err : Error | null, isValid : bool, url : String))
 
+  * name: youtube username, channel id, or alias
+  * err: error objects if a request error occurs
+  * isValid: `true` if channel is a valid channel, `false` otherwise
+  * url: url that was found to work for the given channel name

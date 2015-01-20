@@ -4,7 +4,7 @@ var some = require('async-some')
 
 function check(url, done) {
   request.head(url, function(err, res){
-    done(err, res && isValidStatus(res.statusCode))
+    done(err, res && isValidStatus(res.statusCode) && url)
   });
 }
 
@@ -19,7 +19,9 @@ function isValidYoutubeChannel(channel, done) {
     "https://www.youtube.com/c/" + channel
   ]
 
-  some(urls, check, done)
+  some(urls, check, function(err, url){
+    done(err, !!url, url)
+  })
 }
 
 module.exports = isValidYoutubeChannel
