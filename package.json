@@ -1,0 +1,24 @@
+{
+  "name": "is-youtube-channel",
+  "description": "Checks to see if a string is a valid youtube channel",
+  "keywords": [
+    "youtube"
+  ],
+  "version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/monstercat/is-youtube-channel.git"
+  },
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --reporter spec"
+  },
+  "dependencies": {
+    "async-some": "^1.0.1",
+    "superagent": "^0.21.0"
+  },
+  "devDependencies": {
+    "mocha": "*",
+    "expect.js": "*"
+  }
+}
