@@ -46,4 +46,13 @@ describe('is-youtube-channel', function(){
       done()
     })
   });
+
+  it('works for explicit id', function(done){
+    check.id("UCMIh8iKkrWVhV_YSgHejvoA", function(err, valid, url){
+      expect(err).to.not.be.ok()
+      expect(valid).to.be(true)
+      expect(url).to.contain("channel")
+      done()
+    })
+  });
 });

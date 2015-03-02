@@ -12,6 +12,13 @@ function isValidStatus(status) {
   return status >= 200 && status < 300
 }
 
+function isValidYoutubeChannelId(channelId, done) {
+  var url = "https://www.youtube.com/channel/" + channelId
+  return check(url, function (err, url) {
+    return done(err, !!url, url);
+  });
+}
+
 function isValidYoutubeChannel(channel, done) {
   var urls = [
     "https://www.youtube.com/user/" + channel,
@@ -25,3 +32,4 @@ function isValidYoutubeChannel(channel, done) {
 }
 
 module.exports = isValidYoutubeChannel
+module.exports.id = isValidYoutubeChannelId
