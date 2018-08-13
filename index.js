@@ -1,11 +1,13 @@
-
-var request = require('superagent')
-var some = require('async-some')
+const request = require('request')
+const some    = require('async-some')
 
 function check(url, done) {
-  request.head(url, function(err, res){
+  request({
+    url: url,
+    method: "HEAD",
+  }, (err, res) => {
     done(err, res && isValidStatus(res.statusCode) && url)
-  });
+  })
 }
 
 function isValidStatus(status) {

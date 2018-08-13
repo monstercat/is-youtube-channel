@@ -39,7 +39,7 @@ describe('is-youtube-channel', function(){
   });
 
   it('works for ids', function(done){
-    check("UCMIh8iKkrWVhV_YSgHejvoA", function(err, valid, url){
+    check("UCJ6td3C9QlPO9O_J5dF4ZzA", function(err, valid, url){
       expect(err).to.not.be.ok()
       expect(valid).to.be(true)
       expect(url).to.contain("channel")

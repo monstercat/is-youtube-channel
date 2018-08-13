@@ -15,7 +15,7 @@
   },
   "dependencies": {
     "async-some": "^1.0.1",
-    "superagent": "^0.21.0"
+    "request": "^2.88.0",
   },
   "devDependencies": {
     "mocha": "*",
