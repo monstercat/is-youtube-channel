@@ -21,16 +21,22 @@ function isValidYoutubeChannelId(channelId, done) {
   });
 }
 
-function isValidYoutubeChannel(channel, done) {
-  var urls = [
-    "https://www.youtube.com/user/" + channel,
-    "https://www.youtube.com/channel/" + channel,
-    "https://www.youtube.com/c/" + channel
-  ]
+function isValidYoutubeChannel(channel) {
+  return new Promise(function (resolve, reject) {
+    if (channel.length <= 0) return reject(new Error("Invalid Channel"));
 
-  some(urls, check, function(err, url){
-    done(err, !!url, url)
-  })
+    var urls = [
+      "https://www.youtube.com/user/" + channel,
+      "https://www.youtube.com/channel/" + channel,
+      "https://www.youtube.com/c/" + channel,
+    ];
+
+    some(urls, check, function (err, url) {
+      if (err) return reject(new Error(err));
+
+      resolve(!!url, url);
+    });
+  });
 }
 
 module.exports = isValidYoutubeChannel
